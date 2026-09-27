@@ -1,0 +1,28 @@
+// use prisma-next
+
+model DistanceReading {
+  id         Int      @id @default(autoincrement())
+  deviceId   String
+  distanceCm Float
+  receivedAt TimestamptzString(3)
+
+  @@map("distance_readings")
+}
+
+model LightReading {
+  id         Int      @id @default(autoincrement())
+  deviceId   String
+  lightLux   Float
+  receivedAt TimestamptzString(3)
+
+  @@map("light_readings")
+}
+
+model MotionEvent {
+  id             Int      @id @default(autoincrement())
+  deviceId       String
+  motionDetected Boolean
+  receivedAt     TimestamptzString(3)
+
+  @@map("motion_events")
+}
